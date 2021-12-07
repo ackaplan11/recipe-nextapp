@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Fragment } from "react"
-import Nav from '../components/Nav'
-import NavItem from '../components/NavItem'
-import List from '../components/List'
-import ListItem from '../components/ListItem'
+import NavBar from '../components/nav/NavBar.js'
+import NavItem from '../components/nav/NavItem.js'
+import List from '../components/recipe/List.js'
+import ListItem from '../components/recipe/ListItem.js'
 
 const DUMMY_DATA = [
   {
@@ -20,10 +20,6 @@ const DUMMY_DATA = [
     id: "Pasta",
     title: "Pasta",
     author: "Papa",
-    time: 35,
-    difficulty: 'easy',
-    servings: 2,
-    rating: 4.0,
     image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhc3RhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
   }
 ]
@@ -31,11 +27,11 @@ const DUMMY_DATA = [
 export default function RecipeHome() {
   return (
     <div className="divide-y divide-gray-100">
-      <Nav>
+      <NavBar>
         <NavItem href="/featured" isActive>Featured</NavItem>
         <NavItem href="/popular">Popular</NavItem>
         <NavItem href="/recent">Recent</NavItem>
-      </Nav>
+      </NavBar>
       <List>
         {DUMMY_DATA.map((recipe) => (
           <ListItem key={recipe.id} recipe={recipe} />
