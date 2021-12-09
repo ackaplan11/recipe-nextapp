@@ -35,6 +35,8 @@ export default function RecipeHome() {
         <NavItem href="/featured" isActive>Featured</NavItem>
         <NavItem href="/popular">Popular</NavItem>
         <NavItem href="/recent">Recent</NavItem>
+        <NavItem href="/users/signup">Sign Up</NavItem>
+        <NavItem href="/users/login">Log In</NavItem>
       </Nav>
       <List>
         {DUMMY_DATA.map((recipe) => (

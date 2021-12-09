@@ -27,6 +27,14 @@ export default function aboutPage() {
               <ul><li>HTML/CSS/REACT styling for UI</li></ul>
 
           </list>
+          <list>
+            <ul><li>Complete Sign Up Page</li></ul>
+            <ul><li>Create Form</li></ul>
+            <ul><li>UI</li></ul>
+            <ul><li>Connect to DB</li></ul>
+            <ul><li></li></ul>
+          </list>
+
         </main>    
       </div>
   )
