@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function LoginForm(props) {
 
-    const loginUser = (event) => {
+    const loginUser = async (event) => {
         event.preventDefault()
         const formData = event.target
         const username = formData.username.value
@@ -12,9 +12,9 @@ export default function LoginForm(props) {
             username: username,
             password: password
         }
-        fetch()
+        
         console.log(loginData)
-        formDaata.clear()
+        formData.clear()
     }
     
     return (

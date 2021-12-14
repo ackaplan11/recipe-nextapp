@@ -41,7 +41,7 @@ export default function RecipeHome(props) {
 }
 
 // This also gets called at build time
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
   
