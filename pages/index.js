@@ -28,14 +28,31 @@ const DUMMY_DATA = [
   }
 ]
 
-export default function RecipeHome() {
+export default function RecipeHome(props) {
   return (
     <div className="divide-y divide-gray-100">
       <List>
-        {DUMMY_DATA.map((recipe) => (
+        {props.recipes.map((recipe) => (
           <ListItem key={recipe.id} recipe={recipe} />
         ))}
       </List>
     </div>
   )
+}
+
+// This also gets called at build time
+export async function getStaticProps({ params }) {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  
+  //const res = await fetch(`http://localhost:3000/${params.id}.json`)
+  //const data = await res.json()
+  const data = DUMMY_DATA
+  // Pass post data to the page via props
+  return { 
+    props: { 
+      recipes: data 
+    }, 
+    revalidate: 60 
+  }
 }
