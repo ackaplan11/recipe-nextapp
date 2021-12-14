@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import { Fragment } from "react"
-import Nav from '../components/Nav'
-import NavItem from '../components/NavItem'
+import Nav from '../components/layout/Nav'
+import NavItem from '../components/layout/NavItem'
 import List from '../components/List'
 import ListItem from '../components/ListItem'
 
 const DUMMY_DATA = [
   {
-    id: "Ramen",
+    id: "ramen",
     title: "Ramen",
     time: 30,
     diffuclty: "medium",
@@ -17,7 +17,7 @@ const DUMMY_DATA = [
     image: "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
   },
   {
-    id: "Pasta",
+    id: "pasta",
     title: "Pasta",
     author: "Papa",
     time: 35,
@@ -31,13 +31,6 @@ const DUMMY_DATA = [
 export default function RecipeHome() {
   return (
     <div className="divide-y divide-gray-100">
-      <Nav>
-        <NavItem href="/featured" isActive>Featured</NavItem>
-        <NavItem href="/popular">Popular</NavItem>
-        <NavItem href="/recent">Recent</NavItem>
-        <NavItem href="/users/signup">Sign Up</NavItem>
-        <NavItem href="/users/login">Log In</NavItem>
-      </Nav>
       <List>
         {DUMMY_DATA.map((recipe) => (
           <ListItem key={recipe.id} recipe={recipe} />

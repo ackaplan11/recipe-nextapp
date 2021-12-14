@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router'
+import RecipePost from '../../components/RecipePost'
 
 export default function Recipe({ recipe }) {
   const router = useRouter()
   const { id } = router.query
   return(<>
-      <h1>{id} Recipe</h1>
-      <img src={ recipe.image }/>
+      <RecipePost recipe={recipe}/>
   </>)
 }
 
