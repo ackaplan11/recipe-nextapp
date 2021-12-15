@@ -18,7 +18,7 @@ export default function SignupForm() {
                 passwordConfirm: passwordConfirm
             }
             console.log(signupData)
-            const response = await fetch('/api/new-user', {
+            const response = await fetch('/api/users/signup-api', {
                 method: "POST",
                 body: JSON.stringify(signupData),
                 headers: {

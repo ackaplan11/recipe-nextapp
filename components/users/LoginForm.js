@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import Link from 'next/link'
 
 export default function LoginForm(props) {
@@ -12,7 +11,7 @@ export default function LoginForm(props) {
             username: username,
             password: password
         }
-        const response = await fetch('/api/authenticate-user', {
+        const response = await fetch('/api/users/login-api', {
             method: "POST",
             body: JSON.stringify(loginData),
             headers: {

@@ -1,9 +1,5 @@
-import Link from 'next/link'
-import { Fragment } from "react"
-import Nav from '../components/layout/Nav'
-import NavItem from '../components/layout/NavItem'
-import List from '../components/List'
-import ListItem from '../components/ListItem'
+import List from '../components/recipes/List'
+import ListItem from '../components/recipes/ListItem'
 
 const DUMMY_DATA = [
   {
@@ -28,7 +24,7 @@ const DUMMY_DATA = [
   }
 ]
 
-export default function RecipeHome(props) {
+export default function LandingPage(props) {
   return (
     <div className="divide-y divide-gray-100">
       <List>

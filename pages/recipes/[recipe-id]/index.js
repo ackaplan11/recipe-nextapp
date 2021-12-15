@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import RecipePost from '../../components/RecipePost'
+import RecipePost from '../../../components/recipes/Post'
 
 export default function Recipe({ recipe }) {
   const router = useRouter()
