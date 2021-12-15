@@ -12,9 +12,15 @@ export default function LoginForm(props) {
             username: username,
             password: password
         }
-        
-        console.log(loginData)
-        formData.clear()
+        const response = await fetch('/api/authenticate-user', {
+            method: "POST",
+            body: JSON.stringify(loginData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        console.log(response.json())
+        formData.reset()
     }
     
     return (

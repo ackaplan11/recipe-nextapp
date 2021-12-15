@@ -1,7 +1,7 @@
 import { Fragment, useRef } from 'react'
 import Link from 'next/link'
 
-export default function SignupForm(props) {
+export default function SignupForm() {
 
     const signupUser = async (event) => {
         event.preventDefault()
@@ -12,15 +12,15 @@ export default function SignupForm(props) {
         if (password != passwordConfirm) {
             console.log("Passwords do not match, please try again")
         } else {
-            const loginData = {
+            const signupData = {
                 username: username,
                 password: password,
                 passwordConfirm: passwordConfirm
             }
-            console.log(loginData)
+            console.log(signupData)
             const response = await fetch('/api/new-user', {
                 method: "POST",
-                body: JSON.stringify(loginData),
+                body: JSON.stringify(signupData),
                 headers: {
                     'Content-Type': 'application/json'
                 }
