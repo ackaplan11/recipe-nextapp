@@ -15,6 +15,7 @@ export default function Recipe({ recipe }) {
 export async function getStaticProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
+  
   const res = await fetch(`http://localhost:3000/${params.id}.json`)
   const data = await res.json()
 
