@@ -28,8 +28,8 @@ export default function LandingPage(props) {
   return (
     <div className="divide-y divide-gray-100">
       <List>
-        {props.recipes.map((recipe) => (
-          <ListItem key={recipe.id} recipe={recipe} />
+        {props.recipes.map(recipe => (
+          <ListItem key={recipe._id} recipe={recipe} />
         ))}
       </List>
     </div>
@@ -40,14 +40,18 @@ export default function LandingPage(props) {
 export async function getStaticProps() {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
-  
-  //const res = await fetch(`http://localhost:3000/${params.id}.json`)
-  //const data = await res.json()
-  const data = DUMMY_DATA
+  const res = await fetch('http://localhost:3000/api/recipes/recipe-list-api', {
+    method: "GET",
+    headers: {
+        'Content-Type': 'application/json'
+    }
+  })
+  const data = await res.json()
+  //const data = DUMMY_DATA
   // Pass post data to the page via props
   return { 
     props: { 
-      recipes: data 
+      recipes: data.recipeData 
     }, 
     revalidate: 60 
   }
